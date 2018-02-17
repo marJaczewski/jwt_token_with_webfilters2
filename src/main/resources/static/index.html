@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html ng-app="mainModule">
+<head>
+    <meta charset="UTF-8">
+    <title>Multiliga</title>
+
+</head>
+<body ng-controller="loginController">
+
+
+<div id="annonymusNav">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+                    <span class="sr-only">Menu</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#home">Secur</a>
+            </div>
+            <div id="allTypes">
+                <div id="navbar" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="#admin">Admin</a></li>
+
+
+
+
+                        <li>
+                            <p class="navbar-btn">
+                                <a href="#login" class="btn btn-default" >Zaloguj</a>
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>
+
+
+
+
+
+
+<div id="main">
+    <div ng-view></div>
+
+</div>
+
+
+
+</body>
+
+<link rel="stylesheet" href="style.css">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-route.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+
+
+<script src="Controllers/app.js"></script>
+<script src="Controllers/homeController.js"></script>
+
+<script src="Controllers/adminController.js"></script>
+<script src="Controllers/loginController.js"></script>
+
+</html>
