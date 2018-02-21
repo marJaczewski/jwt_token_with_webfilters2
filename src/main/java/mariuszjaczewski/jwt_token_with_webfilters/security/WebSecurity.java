@@ -33,11 +33,18 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
 
                 .antMatchers(HttpMethod.POST, SIGN_UP_URL).permitAll()
 //                .antMatchers(HttpMethod.GET,  "/someGet").permitAll()
-                .antMatchers(  "/indexc", "/Controllers/**", "/templates/**").permitAll()
+                .antMatchers(  "/indexc", "/controllers/**", "/templates/**").permitAll()
+                .antMatchers(    "/userTemplates/**").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .addFilter(new JWTAuthenticationFilter(authenticationManager()))
                 .addFilter(new JWTAuthorizationFilter(authenticationManager()))
+
+                .formLogin().loginPage("/templates/login.html")
+                .defaultSuccessUrl("/userTemplates/userAccount.html")
+                .failureUrl("/templates/login").permitAll()
+                .and()
+
 
                 // this disables session creation on Spring Security
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);

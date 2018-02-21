@@ -65,6 +65,12 @@
 			<scope>test</scope>
 		</dependency>
 
+		<!--&lt;!&ndash; https://mvnrepository.com/artifact/org.mongodb/mongo-java-driver &ndash;&gt;-->
+		<!--<dependency>-->
+			<!--<groupId>org.mongodb</groupId>-->
+			<!--<artifactId>mongo-java-driver</artifactId>-->
+			<!--<version>3.6.3</version>-->
+		<!--</dependency>-->
 
 
 

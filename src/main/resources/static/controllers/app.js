@@ -17,7 +17,10 @@ app.config(function($routeProvider) {
             templateUrl:"/templates/home.html",
             controller:'homeController'
         })
-
+        .when('/userAccount', {
+            templateUrl:"/userTemplates/userAccount.html",
+            controller:'userAccountController'
+        })
 
 
         .when ('/login',{

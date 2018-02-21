@@ -16,9 +16,9 @@
 
         <div class="loging">
             <label>Podaj login </label>
-            <input   class="form-control mr-sm-2" type="text" ng-model="queryEmail"  >
+            <input   class="form-control mr-sm-2" type="text" ng-model="user.username"  >
             <label>Podaj hasło </label>
-            <input class="form-control mr-sm-2" type="password" ng-model="password" >
+            <input class="form-control mr-sm-2" type="password" ng-model="user.password" >
             <input type="submit" class="btn btn-info btn-lg" value="Zaloguj" ng-click="doLogin()">
             <br>
 
@@ -26,9 +26,9 @@
 
 {{zal}}
 
-{{loggedDetails}}
-
+{{user}}
+{{test}}
         {{8+8}}
-
+Info: {{loginResponse}}
     </div>
 </div>

@@ -1,23 +1,26 @@
 app.controller('loginController', function($scope, $http, $location, myFactory) {
 
     $scope.queryEmail = "";
-    $scope.password = "";
-$scope.zal="";
+
+    $scope.user={
+      username : "",
+      password : ""
+    };
+
+    $scope.loginResponse="";
     $scope.doLogin = function () {
 
 
-        $http.get($location.protocol() + '://' + $location.host() + ':' + $location.port() + '/logging/' + $scope.queryEmail + '/' + $scope.password)
-            .success(function (result) {
+        $http.post($location.protocol() + '://' + $location.host() + ':' + $location.port() + '/login', $scope.user)
+            .then(function (response) {
+$scope.loginResponse=response;
+myFactory.setToken(response.headers('Authorization'));
+console.log(response.headers('Authorization'));
 
-
-
-
-
-
-
-
-            }).error(function (result) {
-
+if(myFactory.getToken()!==null){
+window.location.href="#userAccount";}
+            }, function () {
+alert("Blad logowania");
         })
     };
 
@@ -35,12 +38,16 @@ $scope.zal="";
 
 
 app.factory('myFactory', function () {
+   var token;
     var userId = 0;
     var logged = false;
     var userEmail;
     var userRole;
 
     var service = {};
+
+    service.getToken = function() {return token};
+    service.setToken = function(myToken) {token = myToken};
 
     service.getUser = function () { return userId; };
     service.setUser = function (userIdService){ userId =  userIdService; };
